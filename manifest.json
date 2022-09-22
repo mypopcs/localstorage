@@ -1,0 +1,34 @@
+{
+    "manifest_version": 2,
+    "name": "Skywalker",
+    "short_name": "Skywalker",
+    "description": "天行者-英文网站云汉化解决方案",
+    "version": "1.0",
+    "homepage_url": "https://figma.cool",
+    "icons": {
+      "16": "img/icon-16.png",
+      "48": "img/icon-48.png",
+      "128": "img/icon-128.png"
+    },
+    "permissions": ["storage"],
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*.figma.com/*","*://www.baidu.com/*"
+        ],
+        "js": [
+          "js/jquery-3.6.0.min.js",
+          "js/dataHandle.js"
+        ],
+        "css": ["css/index.css"],
+        "run_at": "document_end",
+        "all_frames": true
+      }
+    ],
+    "background": {
+      "scripts": [
+        "js/jquery-3.6.0.min.js",
+        "js/background.js"
+      ]
+    }
+  }
